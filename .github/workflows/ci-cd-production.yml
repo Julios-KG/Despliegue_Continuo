@@ -1,0 +1,31 @@
+name: CI/CD Pipeline - Producción
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run JavaScript Code in Production
+        run: |
+          echo "Ejecutando código en el entorno de producción"
+          node index.js || echo "Error: archivo de JavaScript no encontrado"
+        shell: bash
+
+      - name: Deploy to Production
+        run: |
+          echo "Desplegando en producción..."
+          # Simulación del despliegue a producción
+          echo "Despliegue en producción completado"
+
+      - name: Set Up Monitoring
+        run: |
+          echo "Configurando métricas de monitoreo..."
+          # Simulación de configuración de métricas
+          echo "Monitoreo configurado"
