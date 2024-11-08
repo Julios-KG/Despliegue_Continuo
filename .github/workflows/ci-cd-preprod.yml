@@ -1,0 +1,19 @@
+name: CI/CD Pipeline - Preproducción
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run JavaScript Code
+        run: |
+          echo "Ejecutando código de JavaScript"
+          node index.js
+        shell: bash
